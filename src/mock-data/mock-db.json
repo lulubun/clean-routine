@@ -1,0 +1,36 @@
+{
+  "chores": {
+    "daily": [
+      "wipe kitchen counters",
+      "empty dishwasher",
+      "load dishwasher",
+      "wash one load of laundry",
+      "fold and put away one load of laundry"
+    ],
+    "longer": [
+      "dust built-ins",
+      "wipe down kitchen appliances",
+      "wipe down lower kitchen cabinets",
+      "dust ceilings for spider webs",
+      "wipe down upper kitchen cabinets",
+      "run oven clean cycle",
+      "wipe down all door knobs",
+      "wipe baseboards in kitchen",
+      "wipe baseboards in front bathroom",
+      "wipe baseboards in back bathroom"
+    ],
+    "weekly": [
+      "clean front bathroom",
+      "clean back bathroom",
+      "deep clean kitchen counters",
+      "sweep/vacuum living room",
+      "sweep/vacuum bedrooms and hallway",
+      "wipe down coffee table and console tables",
+      "clean stove"
+    ]
+  },
+  "completedToday": [],
+  "longerCount": 0,
+  "weeklyCount": 0,
+  "lastIn": "Mon Apr 20 2020"
+}
