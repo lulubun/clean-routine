@@ -3,7 +3,7 @@ import {
   List,
   ListItem,
   Modal,
-} from "@material-ui/core";
+} from "@mui/material";
 import EditingBox from "./edit-box";
 import { ModalWrapper, PeachButton, BlueButton, ChoreName} from "../styled-components";
 
@@ -17,7 +17,7 @@ const ListUpdateModal = (props) => {
           >
           {label}
         </PeachButton>
-    <Modal open={isOpen} onBackdropClick={() => setModalOpen(false)}>
+    <Modal open={isOpen} onClose={() => setModalOpen(false)}>
       <ModalWrapper>
         <h4>{label}</h4>
         <List>

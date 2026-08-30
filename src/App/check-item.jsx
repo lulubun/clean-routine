@@ -1,17 +1,16 @@
 import React from "react";
-import { FormControlLabel, Checkbox } from "@material-ui/core";
-import { withStyles } from "@material-ui/core/styles";
+import { FormControlLabel, Checkbox } from "@mui/material";
+import { styled } from "@mui/material/styles";
 import { ChecklistWrapper, colorList } from "./styled-components";
 
-const ColoredCheckbox = withStyles({
-  root: {
-    color: colorList.cornflower,
-    "&$checked": {
-      color: colorList.lightBlue,
-    },
+const ColoredCheckbox = styled((props) => (
+  <Checkbox color="default" {...props} />
+))({
+  color: colorList.cornflower,
+  "&.Mui-checked": {
+    color: colorList.lightBlue,
   },
-  checked: {},
-})((props) => <Checkbox color="default" {...props} />);
+});
 
 const CheckItems = (props) => {
   const {list, isChecked, changeCheck} = props;

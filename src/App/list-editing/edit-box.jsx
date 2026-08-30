@@ -2,7 +2,7 @@ import React from "react";
 import {
   Input,
   InputAdornment,
-} from "@material-ui/core";
+} from "@mui/material";
 import { PeachButton, colorList} from "../styled-components";
 
 

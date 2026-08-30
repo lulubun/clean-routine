@@ -1,11 +1,11 @@
 import React from "react";
-import { Modal } from "@material-ui/core";
+import { Modal } from "@mui/material";
 import { PeachButton, ChoreName, ModalWrapper } from "./styled-components";
 
 const Instructions = (props) => {
   const { closeModal, isOpen } = props;
   return (
-    <Modal open={isOpen} onBackdropClick={closeModal}>
+    <Modal open={isOpen} onClose={closeModal}>
       <ModalWrapper>
         <ChoreName>This is a daily chore checklist</ChoreName>
         <PeachButton onClick={closeModal}>Done</PeachButton>
