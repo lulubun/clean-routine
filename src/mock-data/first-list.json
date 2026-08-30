@@ -16,17 +16,38 @@
             "wipe down coffee table and console tables",
             "clean stove"
         ],
-        "longer": [
-            "dust built-ins",
-            "wipe down kitchen appliances",
-            "wipe down lower kitchen cabinets",
-            "dust ceilings for spider webs",
-            "wipe down upper kitchen cabinets",
-            "run oven clean cycle",
+        "bi-weekly": [
+            "clean out fridge",
+            "clean out pantry"
+        ],
+        "monthly": [
+            "wipe down kitchen cabinets",
+            "wipe down baseboards in kitchen",
+            "wipe down baseboards in hallway",
+            "dust ceiling fans",
+            "dust light fixtures"
+        ],
+        "yearly": [
+            "clean out under the couch",
             "wipe down all door knobs",
-            "wipe baseboards in kitchen",
-            "wipe baseboards in front bathroom",
-            "wipe baseboards in back bathroom"
+            "wipe down kitchen appliances"
+        ],
+        "custom": [
+            {"chore": "dust built-ins", "frequency": "3 months"},
+            {"chore": "clean out under the bed", "frequency": "6 months"},
+            {"chore": "clean out garage", "frequency": "1 year"},
+            {"chore": "clean out attic", "frequency": "1 year"},
+            {"chore": "clean out basement", "frequency": "1 year"},
+            {"chore": "clean out storage unit", "frequency": "1 year"},
+            {"chore": "clean out closets", "frequency": "1 year"},
+            {"chore": "clean out drawers", "frequency": "1 year"},
+            {"chore": "clean out cabinets", "frequency": "1 year"},
+            {"chore": "clean out shelves", "frequency": "1 year"},
+            {"chore": "wipe down lower kitchen cabinets"},
+            {"chore": "dust ceilings for spider webs"},
+            {"chore": "wipe down upper kitchen cabinets"},
+            {"chore": "run oven clean cycle"}
+     
         ]
     },
     "lastIn": "Mon Apr 20 2020",

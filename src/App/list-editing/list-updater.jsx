@@ -5,56 +5,73 @@ import {
   Modal,
 } from "@mui/material";
 import EditingBox from "./edit-box";
-import { ModalWrapper, PeachButton, BlueButton, ChoreName} from "../styled-components";
+import EditButton from "./edit-button";
+import { ModalWrapper, PeachButton, BlueButton, ChoreName, ListSection, ListSectionTitle } from "../styled-components";
+
+const updateList = (listType, update) => dispatch({ type: "UPDATE_LIST", listType, update });
+
+
+const IteratedChoreList = ({ choreKind, choreSet, setChores, editingChore, setEditingChore }) => {
+  return (
+    <ListSection>
+      <ListSectionTitle>
+      {choreKind}
+      </ListSectionTitle>
+      <List>
+        {choreSet &&
+          choreSet.map((w, i) => {
+            const isBeingEdited = editingChore === w;
+            return (
+              <ListItem key={`$Chores-${w}`}>
+                {isBeingEdited ?
+                  (<EditingBox
+                    chore={w}
+                    choreKind={choreKind}
+                    setChores={updateList}
+                  />) : (<ChoreName>{w}</ChoreName>)}
+                {!isBeingEdited && <EditButton onClick={() => setEditingChore(w)}></EditButton>}
+              </ListItem>
+            )
+          })}
+      </List>
+    </ListSection>
+  );
+};
 
 const ListUpdateModal = (props) => {
-  const { label, isOpen, setModalOpen, chores, setChores } = props;
-  const [editingChore, seteditingChore] = useState('')
+  const { label, isOpen, setModalOpen, chores } = props;  
+  const [editingChore, setEditingChore] = useState('')
+  const handleModalClose = () => {
+    setModalOpen(false);
+    setEditingChore('');
+  }
+
   return (
-    <div>
-      <PeachButton
-          onClick={() => setModalOpen(true)}
+      <Modal open={isOpen} onClose={handleModalClose}>
+        <ModalWrapper>
+          <h4>Chores</h4>
+          <EditingBox
+            setChores={updateList}
+          />
+          {chores && Object.keys(chores).map((k) => {
+            return (
+              <IteratedChoreList
+                editingChore={editingChore}
+                setEditingChore={setEditingChore}
+                key={`chores-${k}`}
+                choreKind={k}
+                choreSet={chores[k]}
+                setChores={(updated) => updateList(k, updated)}
+              />
+            )
+          })}
+          <BlueButton
+            onClick={handleModalClose}
           >
-          {label}
-        </PeachButton>
-    <Modal open={isOpen} onClose={() => setModalOpen(false)}>
-      <ModalWrapper>
-        <h4>{label}</h4>
-        <List>
-          {chores &&
-            chores.map((w, i) => {
-              const isBeingEdited = editingChore === w;
-              return (
-              <ListItem key={`${label}-${w}`}>
-                {isBeingEdited ?
-                (<EditingBox
-                  allChores={chores}
-                  chore={w}
-                  setChores={setChores}
-                  idx={i}
-                />) : (<ChoreName>{w}</ChoreName>)}
-                {!isBeingEdited && <PeachButton onClick={() => seteditingChore(w)}>Edit</PeachButton>}
-              </ListItem>
-            )})}
-          <ListItem>
-            <EditingBox
-              allChores={chores}
-              placeholder="Add a new chore"
-              setChores={setChores}
-              idx={chores.length}
-            />
-          </ListItem>
-        </List>
-        <BlueButton
-          onClick={() => {
-            setModalOpen(false);
-          }}
-        >
-          Save
-        </BlueButton>
-      </ModalWrapper>
-    </Modal>
-    </div>
+            Close
+          </BlueButton>
+        </ModalWrapper>
+      </Modal>
   );
 };
 export default ListUpdateModal;

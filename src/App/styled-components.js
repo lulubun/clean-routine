@@ -1,16 +1,16 @@
 import styled from "styled-components";
 
 const colorList = {
-    lavenderGray: "#7E6C6C",
-    coral: "#F87575",
-    melon: "#FFA9A3",
-    lightBlue: "#B9E6FF",
-    cornflower: "#5c95ff",
-}
+  lavenderGray: "#7E6C6C",
+  coral: "#F87575",
+  melon: "#FFA9A3",
+  lightBlue: "#B9E6FF",
+  cornflower: "#5c95ff",
+};
 
 const Separator = styled.div`
   margin: 5px 0;
-`
+`;
 
 const AppHeader = styled.header`
   background-color: ${colorList.coral};
@@ -41,14 +41,15 @@ const ChecklistWrapper = styled.div`
 `;
 
 const ModalWrapper = styled.div`
-    margin: 50px 30% auto 30%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-    flex-direction: column;
-    padding-bottom: 10px;
-    border: 5px solid ${colorList.lightBlue};
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  flex-direction: column;
+  border: 5px solid ${colorList.lightBlue};
+  max-height: 95vh;
+  overflow-y: scroll;
 `;
 
 const PeachButton = styled.button`
@@ -57,18 +58,49 @@ const PeachButton = styled.button`
   color: white;
   border: 0px;
   border-radius: 5px;
+  margin-left: 5px;
 `;
 
 const BlueButton = styled.button`
-    background-color: ${colorList.cornflower};
-    color: white;
-    border-radius: 5px;
-    border: 0px;
+  background-color: ${colorList.cornflower};
+  color: white;
+  border-radius: 5px;
+  border: 0px;
 `;
 
 const ChoreName = styled.p`
-    color: ${colorList.cornflower};
-    padding-right: 5px;
+  color: ${colorList.cornflower};
+  padding-right: 5px;
 `;
 
-export {colorList, ChoreName, AppHeader, InstructionWrapper, ListHeader, ChecklistWrapper, ModalWrapper, PeachButton, BlueButton, Separator };
+const ListSection = styled.div`
+  display: flex;";
+  margin-bottom: 10;
+  justify-content: space-between;
+  width: 50%;
+`;
+
+const ListSectionTitle = styled.div`
+  width: 50%;
+  display: flex;
+  justifyContent: "start";
+  alignItems: "start";
+  padding-top: 32px;
+  color: ${colorList.lavenderGray};
+  font-size: 1.5em;
+`;
+
+export {
+  colorList,
+  ChoreName,
+  AppHeader,
+  InstructionWrapper,
+  ListHeader,
+  ListSection,
+  ListSectionTitle,
+  ChecklistWrapper,
+  ModalWrapper,
+  PeachButton,
+  BlueButton,
+  Separator,
+};
